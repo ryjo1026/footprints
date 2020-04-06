@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/build/static/js/'),
     publicPath: '/static/js/',
-    filename: './build/static/js/bundle.js',
+    filename: 'bundle.js',
   },
   module: {
     rules: [

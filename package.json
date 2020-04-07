@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-google-maps": "^9.4.5"
   },
   "scripts": {
     "build": "webpack --mode production",

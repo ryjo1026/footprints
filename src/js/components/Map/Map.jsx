@@ -6,11 +6,7 @@ import { getNearestRoads } from '../../api/map.js';
 const createMockData = () => {
     let data = [];
     for (let i = 0; i < 100; i++) {
-<<<<<<< HEAD
-        data.push(new google.maps.LatLng({ lat: Math.random() * 0.02 + 42.27, lng: Math.random() * 0.02 - 83.753 }));
-=======
         data.push(new google.maps.LatLng({ lat: Math.random() * 0.01 + 42.275, lng: Math.random() * 0.01 - 83.752 }));
->>>>>>> maps-data
     }
     return data;
 };

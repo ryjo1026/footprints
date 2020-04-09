@@ -1,2 +1,51 @@
 @charset "utf-8";
+
+// Bulma overrides
+$family-sans-serif: 'CerealBook';
+$primary: #0f4d81;
+
 @import '../../node_modules/bulma/bulma.sass';
+
+@font-face {
+  font-family: 'CerealBook';
+  src: url('/static/fonts/AirbnbCereal-Book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CerealLight';
+  src: url('/static/fonts/AirbnbCereal-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CerealMedium';
+  src: url('/static/fonts/AirbnbCereal-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GoldplayBold';
+  src: url('/static/fonts/Goldplay-SemiBold.otf') format('opentype');
+}
+
+$family-display: 'GoldplayBold';
+$family-heading: 'CerealMedium';
+$family-subheading: 'CerealLight';
+$family-body: 'CerealBook';
+
+h1,
+h2 {
+  font-family: $family-display;
+}
+
+h3,
+h4 {
+  font-family: $family-heading;
+}
+
+h5,
+h6 {
+  font-family: $family-subheading;
+}
+
+b {
+  font-family: $family-body;
+}

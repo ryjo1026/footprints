@@ -1,5 +1,6 @@
 import React from 'react';
-import Map from './Map/index';
+import Map from '../components/Map/index';
+import Overlay from '../components/Overlay/Overlay';
 
 import '../../sass/main.scss';
 
@@ -8,7 +9,7 @@ const MAPS_URL =
 
 export default function Home() {
   return (
-    <div>
+    <div className="home">
       <Map
         isMarkerShown
         googleMapURL={MAPS_URL}

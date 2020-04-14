@@ -9,6 +9,7 @@ import {
 import HeatmapLayer from 'react-google-maps/lib/components/visualization/HeatmapLayer';
 import { getNearestRoad, getNearestRoads } from '../../api/map';
 import Overlay from '../Overlay/Overlay';
+import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
 
 const DEFAULT_CENTER = { lat: 42.28, lng: -83.74 };
 
@@ -74,7 +75,7 @@ class Map extends React.Component {
 
   componentDidMount() {
     const data = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 25; i++) {
       data.push(
         new google.maps.LatLng({
           lat: Math.random() * 0.01 + 42.275,
@@ -161,6 +162,11 @@ class Map extends React.Component {
               ],
             }}
           />
+          <MarkerClusterer averageCenter enableRetinaIcons gridSize={60}>
+            {heatmapData.map((marker) => (
+              <Marker position={marker} />
+            ))}
+          </MarkerClusterer>
           <KmlLayer
             url="http://localhost:9000/test.kml"
             options={{ preserveViewport: true }}

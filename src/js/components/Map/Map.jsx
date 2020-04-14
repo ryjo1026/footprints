@@ -83,8 +83,6 @@ class Map extends React.Component {
       );
     }
 
-    // getNearestRoad(new google.maps.LatLng(DEFAULT_CENTER)).then(console.log);
-
     getNearestRoads(data)
       .then((res) =>
         res.map(
@@ -160,10 +158,6 @@ class Map extends React.Component {
                 'rgb(0, 0, 255)',
               ],
             }}
-          />
-          <KmlLayer
-            url="http://localhost:9000/test.kml"
-            options={{ preserveViewport: true }}
           />
         </GoogleMap>
       </div>

@@ -19,7 +19,6 @@ function deduplicatePoints(data) {
 }
 
 const getNearestRoads = async (points) => {
-  console.log(points);
   const pointsStr = points
     .map((latLng) => `${latLng.lat()},${latLng.lng()}`)
     .reduce((a, b) => `${a}|${b}`);

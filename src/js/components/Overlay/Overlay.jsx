@@ -50,7 +50,9 @@ export default class Overlay extends React.Component {
 
     this.state = {
       overlayShown: false,
-      markerLocation: {},
+      isSnowSelected: false,
+      isIceSelected: false,
+      isClearSelected: false,
     };
   }
 
@@ -73,12 +75,24 @@ export default class Overlay extends React.Component {
 
     setMarker();
 
-    this.setState({ overlayShown: false });
+    this.setState({
+      overlayShown: false,
+      isSnowSelected: false,
+      isIceSelected: false,
+      isClearSelected: false,
+    });
   };
 
   render() {
-    const { overlayShown } = this.state;
-    const { isMarkerShown } = this.props;
+    const {
+      overlayShown,
+      isSnowSelected,
+      isIceSelected,
+      isClearSelected,
+    } = this.state;
+    const { isMarkerShown, markerPosition } = this.props;
+
+    // TODO clean this mess
 
     if (overlayShown) {
       return (
@@ -119,13 +133,51 @@ export default class Overlay extends React.Component {
                   <div className="field-body">
                     <div className="field">
                       <div className="buttons has-addons">
-                        <button type="button" className="button">
+                        <button
+                          type="button"
+                          className={`button ${
+                            isSnowSelected ? 'is-info' : ''
+                          }`}
+                          onClick={() =>
+                            this.setState((prevState) => {
+                              return {
+                                isSnowSelected: !prevState.isSnowSelected,
+                                isClearSelected: false,
+                              };
+                            })
+                          }
+                        >
                           Snow
                         </button>
-                        <button type="button" className="button">
+                        <button
+                          type="button"
+                          className={`button ${isIceSelected ? 'is-info' : ''}`}
+                          onClick={() =>
+                            this.setState((prevState) => {
+                              return {
+                                isIceSelected: !prevState.isIceSelected,
+                                isClearSelected: false,
+                              };
+                            })
+                          }
+                        >
                           Ice
                         </button>
-                        <button type="button" className="button">
+                        <button
+                          type="button"
+                          className={`button ${
+                            isClearSelected ? 'is-info' : ''
+                          }`}
+                          onClick={() =>
+                            this.setState((prevState) => {
+                              return {
+                                isSnowSelected: false,
+                                isIceSelected: false,
+                                isClearSelected: !prevState.isClearSelected,
+                              };
+                            })
+                          }
+                        >
                           Clear
                         </button>
                       </div>
@@ -145,8 +197,10 @@ export default class Overlay extends React.Component {
                       &nbsp;Set Marker
                     </button>
                     <p className="is-size-7	">
-                      lat:{this.props.markerPosition.lat} lng:
-                      {this.props.markerPosition.lng}
+                      lat:
+                      {markerPosition.lat}
+                      &nbsp;lng:
+                      {markerPosition.lng}
                     </p>
                   </div>
                 ) : (

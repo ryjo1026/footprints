@@ -22,7 +22,7 @@ Download pre-bundled files from [this link](https://github.com/ryjo1026/footprin
 Serve up the files on port 9000 with any simple http server. We recommend using the built in Python server by running:
 
 ```
-python3 -m http.server 9000
+python3 -m http.server -b localhost 9000
 ```
 
-within the directory that you unzipped the files to. Note that you must access the files from `http://localhost:9000` due to restricitons from the Google Maps API.
+within the directory that you unzipped the files to. Note that you must access the files from `http://localhost:9000` due to restrictions from the Google Maps API.

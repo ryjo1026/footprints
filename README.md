@@ -1,5 +1,5 @@
 # footprints
-A PWA for crowdsourcing path obstructions
+A (soon to be) PWA for crowdsourcing path obstructions
 
 # Install and Launch
 
